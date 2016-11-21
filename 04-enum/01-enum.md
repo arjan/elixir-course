@@ -1,33 +1,18 @@
-# Enumerables
+# Loops and enumeration.
 
-
-
-The Enum module contains functions which enumerate over collections.
+The `Enum` module contains functions which enumerate over collections.
 
 Often, we write our own, small, anonymous functions, which we pass in
 as arguments to one of the Enum functions. This lets us transform the
 collection in some way or another.
 
+Collections can be either:
 
-### all?
+* lists
+* ranges (`0..10`)
+* maps
 
-When using `all?`, and much of `Enum`, we supply a function to apply to our collection's items.  In the case of `all?`, the entire collection must evaluate to `true` otherwise `false` will be returned:
 
-```elixir
-iex> Enum.all?(["foo", "bar", "hello"], fn(s) -> String.length(s) == 3 end)
-false
-iex> Enum.all?(["foo", "bar", "hello"], fn(s) -> String.length(s) > 1 end)
-true
-```
-
-### any?
-
-Unlike the above, `any?` will return `true` if at least one item evaluates to `true`:
-
-```elixir
-iex> Enum.any?(["foo", "bar", "hello"], fn(s) -> String.length(s) == 5 end)
-true
-```
 
 ### each
 
@@ -49,27 +34,18 @@ iex> Enum.map([0, 1, 2, 3], fn(x) -> x - 1 end)
 [-1, 0, 1, 2]
 ```
 
-### min
+### filter
 
-Find the `min` value in our collection:
-
-```elixir
-iex> Enum.min([5, 3, 0, -1])
--1
-```
-
-### max
-
-Returns the `max` value in the collection:
+To filter out values that fail some given condition, use the `filter` function:
 
 ```elixir
-iex> Enum.max([5, 3, 0, -1])
-5
+iex> Enum.filter([-1, 0, 1, 2], fn(x) -> x > 0 end)
+[1, 2]
 ```
 
 ### reduce
 
-With `reduce` we can distill our collection down into a single value.  To do this we supply an optional accumulator (`10` in this example) to be passed into our function; if no accumulator is provided the first value is used:
+With `reduce` we can distill our collection down into a single value.  To do this we supply an optional starting value (the "accumulator", `10` in this example) to be passed into our function; if no accumulator is provided the first value is used:
 
 ```elixir
 iex> Enum.reduce([1, 2, 3], 10, fn(x, acc) -> x + acc end)

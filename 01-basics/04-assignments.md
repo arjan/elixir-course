@@ -37,4 +37,4 @@ change that so that we let the Hello module just generate the message.
 
  * Now, add a second greet function which takes a name:
 
-        assert "Hello Arjan" == Hello.greet("Arjan")
+        assert "Hello Arjan" == Hello.greet_name("Arjan")

@@ -59,30 +59,6 @@ iex> Greeter.phrase
     Greeter.phrase()
 ```
 
-### Guards
-
-We briefly covered guards in the [Control Structures](../control-structures) lesson, now we'll see how we can apply them to named functions.  Once Elixir has matched a function any existing guards will be tested.
-
-In the following example we have two functions with the same signature, we rely on guards to determine which to use based on the argument's type:
-
-```elixir
-defmodule Greeter do
-  def hello(names) when is_list(names) do
-    names
-    |> Enum.join(", ")
-    |> hello
-  end
-
-  def hello(name) when is_binary(name) do
-    phrase <> name
-  end
-
-  defp phrase, do: "Hello, "
-end
-
-iex> Greeter.hello ["Sean", "Steve"]
-"Hello, Sean, Steve"
-```
 
 ### Default Arguments
 
