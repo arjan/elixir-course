@@ -1,0 +1,88 @@
+
+
+
+
+Elixir in 1 dag
+===============
+
+
+Basics
+------
+- installatie
+- REPL
+- basisdatatypes, IO.puts, Hello world, string interpolatie
+- mix new, TDD
+- modules / functies
+
+Opdracht:
+1) installeer Elixir 1.3 en Erlang 19; IO.puts "Hello world"
+
+2) start nieuw project met "mix new". gebruik "mix test" om Hello
+   world op het scherm te schrijven in een test case.
+
+3) Zet hello world in een functie in een module en roep aan vanuit
+   testcase (IO.puts nog steeds in testcase; IO.puts is een moeilijk
+   testbaar "side effect")
+
+4) hello functie met 'naam' parameter. Gebruik string-interpolatie.
+
+  Handigheidjes
+  IO.inspect
+
+
+
+Control structures
+------------------
+- branching: if / case / cond
+- loops: for .. do
+- functie-aanroepen; functie-clauses; pattern matching
+
+Opdracht:
+1) Functie die afhankelijk van je leeftijd een classificatie geeft
+   kind / jongere / twintiger / dertiger / etc.
+
+2) alternatieve implementatie met meerdere functieclauses voor hetzelfde principe
+
+3) Maak een respons-systeem voor een chatbot
+
+
+Recursie
+--------
+- recursie
+- fibonacci
+- head/tail notatie
+
+advanced:
+- accumulator
+- tailrecursie
+
+
+Functioneel programmeren
+------------------------
+- Recursie
+- Functies als first-class citizens
+- Enum.map ipv for..do
+- Enum.{reduce, filter, filter_map}
+
+
+Leuke snufjes
+-------------
+- Pipe operator
+- sigils / regex
+- Stream?
+
+Concurrency (lichtgewicht)
+--------------------------
+- spawn / send / receive
+- Task
+
+
+Elixir advanced
+===============
+
+Process link; monitor
+OTP; supervision trees; genservers; worker pools
+
+ETS
+
+Metaprogrammeren; macro's
