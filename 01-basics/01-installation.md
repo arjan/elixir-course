@@ -1,9 +1,8 @@
-# Installation
+# Getting started
 
 
 I am assuming that all of you are familiar with using the terminal.
-
-The Elixir website has all the information you need:
+To install Elixir, the website has all the information you need:
 
 * http://elixir-lang.org/install.html
 
@@ -36,3 +35,53 @@ Hurray, it works!
     iex> IO.puts "Hello world"
     Hello world
     :ok
+
+
+## Modules and functions
+
+Elixir organizes everything in *Modules*. Each module is just a
+collection of functions.
+
+Module names start with an Uppercase, and are written in `CamelCase`.
+
+Function names start with a lowercase and are written in `snake_case`.
+
+Like in the previous example, here we are calling the function `puts`
+inside the module `IO`:
+
+    iex> IO.puts("Hello world")
+    Hello world
+    :ok
+
+Function calls have parentheses around them, however, you can leave
+them away if you want to, as long as they don't cause ambiguity.
+
+    iex> IO.puts "Hello world"
+    Hello world
+    :ok
+
+
+
+## Getting help / documentation
+
+`iex` has a builtin `h` command which shows documentation for any
+module / function, right inside the terminal:
+
+    iex> h IO.puts
+
+    def puts(device \\ group_leader(), item)
+
+    Writes item to the given device, similar to write/2, but adds a
+    newline at the end.
+
+
+    iex(7)> h IO
+
+    IO
+
+    Functions handling input/output (IO).
+    ... more doc ...
+
+You can also reference the website; Elixir has a great help website, accessible at
+http://elixir-lang.org/docs/stable/elixir.  It documents all modules
+and functions available to you.

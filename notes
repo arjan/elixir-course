@@ -8,9 +8,8 @@ Elixir in 1 dag
 
 Basics
 ------
-- installatie
-- REPL
-- basisdatatypes, IO.puts, Hello world, string interpolatie
+- installatie, REPL
+- data types
 - mix new, TDD
 - modules / functies
 
