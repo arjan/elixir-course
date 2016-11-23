@@ -1,6 +1,7 @@
 defmodule ConcurrencyTest do
   use ExUnit.Case
 
+
   test "store put / get" do
     pid = spawn(Store, :start, [])
 
@@ -38,10 +39,10 @@ defmodule ConcurrencyTest do
 
 
   test "store with accessor functions" do
-    pid = StoreAccessor.start()
-    assert nil == StoreAccessor.get(pid, "name")
-    assert :ok == StoreAccessor.put(pid, "name", "Arjan")
-    assert "Arjan" == StoreAccessor.get(pid, "name")
+    pid = Store.start()
+    assert nil == Store.get(pid, "name")
+    assert :ok == Store.put(pid, "name", "Arjan")
+    assert "Arjan" == Store.get(pid, "name")
   end
 
 end

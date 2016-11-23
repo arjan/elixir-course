@@ -1,7 +1,7 @@
-defmodule StoreAccessor do
+defmodule Store do
 
   def start do
-    spawn(StoreAccessor, :init, [])
+    spawn(Store, :init, [])
   end
 
   def put(pid, key, value) do
@@ -15,6 +15,11 @@ defmodule StoreAccessor do
       value -> value
     end
   end
+
+
+
+
+
 
 
 
@@ -35,4 +40,5 @@ defmodule StoreAccessor do
         loop(Map.delete(values, key))
     end
   end
+
 end
